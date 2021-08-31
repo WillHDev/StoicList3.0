@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
-const ArrowFunction = params => 
+const ArrowFunction = _ => 
     <div>
       <h1>I'm an arrow function</h1>
     </div>
@@ -31,19 +31,16 @@ class CompC extends React.Component {
 
 }
 
-//  function Home() {
-//   return (
-//     <>
-//     <h1>Hello world</h1>
-//     <CompA />
-    
-//     </>
-//   )
-// }
+const Home = () => {
+  //[ stateValue, mutateState ]
+  const [ value, setValue ] = useState(10);
+ 
+  // const value = valueState[0];
+  // const setValue = valueState[1];
 
-const HomePage = () => {
     return (
       <>
+      valueState: { value }
       <h1>Hello world</h1>
       <CompA />
       
@@ -52,4 +49,4 @@ const HomePage = () => {
 }
 
 
-export default HomePage;
+export default Home;
