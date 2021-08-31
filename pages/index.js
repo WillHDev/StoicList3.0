@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useDebugValue, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 const ArrowFunction = _ => 
@@ -34,13 +34,18 @@ class CompC extends React.Component {
 const Home = () => {
   //[ stateValue, mutateState ]
   const [ myValue, setValue ] = useState(10);
- 
+ const incrementValue = () => {
+   setValue( myValue + 1 )
+ }
+
   // const value = valueState[0];
   // const setValue = valueState[1];
 
     return (
       <>
-      { myValue }
+      Current Value: { myValue }
+      <button onClick={ incrementValue }>+</button>
+      <button>-</button>
       <h1>Hello world</h1>
       <CompA />
       
