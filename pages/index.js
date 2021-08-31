@@ -33,14 +33,14 @@ class CompC extends React.Component {
 
 const Home = () => {
   //[ stateValue, mutateState ]
-  const [ value, setValue ] = useState(10);
+  const [ myValue, setValue ] = useState(10);
  
   // const value = valueState[0];
   // const setValue = valueState[1];
 
     return (
       <>
-      valueState: { value }
+      { myValue }
       <h1>Hello world</h1>
       <CompA />
       
