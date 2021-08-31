@@ -3,17 +3,17 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../styles/Home.module.css'
 
-const arrowFunction = () => {
-  return (
+const ArrowFunction = params => 
     <div>
       <h1>I'm an arrow function</h1>
     </div>
-  )
-}
+
+
+
 function CompA() {
   return (
     <>
-    <h1>CompA</h1>
+    <ArrowFunction />
     <p>Hello Component A</p>
     </>
   )
