@@ -34,18 +34,27 @@ class CompC extends React.Component {
 const Home = () => {
   //[ stateValue, mutateState ]
   const [ myValue, setValue ] = useState(10);
- const incrementValue = () => {
-   setValue( myValue + 1 )
- }
+ 
 
+  const changeValue = ( incrementor ) => {
+    setValue( myValue + incrementor );
+    return myValue;
+  }
+//   const incrementValue = () => {
+//    setValue( myValue + 1 );
+//  }
+
+//  const decrementValue = () => {
+//   setValue( myValue - 1 );
+// }
   // const value = valueState[0];
   // const setValue = valueState[1];
 
     return (
       <>
       Current Value: { myValue }
-      <button onClick={ incrementValue }>+</button>
-      <button>-</button>
+      <button onClick={ () => changeValue( 1 ) }>+</button>
+      <button onClick={ () => changeValue( -1 )  }>-</button>
       <h1>Hello world</h1>
       <CompA />
       
