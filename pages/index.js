@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useDebugValue, useState } from 'react'
+import React, { useDebugValue, useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 const ArrowFunction = _ => 
@@ -83,6 +83,9 @@ const Home = () => {
   // const value = valueState[0];
   // const setValue = valueState[1];
   const [ myValue, setValue ] = useState(10);
+  useEffect( () => {
+    console.log("useEffect called");
+  })
 
     return (
       <>
