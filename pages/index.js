@@ -78,12 +78,17 @@ const Home = () => {
 // }
   // const value = valueState[0];
   // const setValue = valueState[1];
+  const [ myValue, setValue ] = useState(10);
 
     return (
       <>
       <h1>Hello world</h1>
-      <CompA />
-      <CompC />
+     
+      <h1>CompC</h1>
+     Current Value: <h1>{ myValue }</h1>
+      <button onClick={ () => setValue( myValue + 1 ) }>+</button>
+      <button onClick={ () => setValue( myValue - 1 )}>-</button>
+     
       </>
     )
 }
