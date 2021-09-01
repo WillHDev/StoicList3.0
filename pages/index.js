@@ -36,10 +36,10 @@ const Home = () => {
   const [ myValue, setValue ] = useState(10);
  
 
-  const changeValue = ( incrementor ) => {
-    setValue( myValue + incrementor );
-    return myValue;
-  }
+  // const changeValue = ( incrementor ) => {
+  //   setValue( myValue + incrementor );
+  //   return myValue;
+  // }
 //   const incrementValue = () => {
 //    setValue( myValue + 1 );
 //  }
@@ -53,8 +53,8 @@ const Home = () => {
     return (
       <>
       Current Value: { myValue }
-      <button onClick={ () => changeValue( 1 ) }>+</button>
-      <button onClick={ () => changeValue( -1 )  }>-</button>
+      <button onClick={ () => setValue( myValue + 1 ) }>+</button>
+      <button onClick={ () => setValue( myValue -1 )  }>-</button>
       <h1>Hello world</h1>
       <CompA />
       
