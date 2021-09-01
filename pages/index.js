@@ -57,17 +57,25 @@ class CompC extends React.Component {
  
   render() {
     const { myValue }  = this.state;
+    const { myProp1, MyProp2 } = this.props;
     return (
       <>
       <h1>CompC</h1>
       Current Value: { this.state.myValue }
       <button onClick={ () => this.changeState( myValue + 1 ) }>+</button>
       <button onClick={ () => this.changeState( myValue - 1 )}>-</button>
+      <h2>{ myProp1 }</h2>
+      <MyProp2 />
       </>
     )
   }
 
 }
+
+function MyComponent() {
+  return <h1>My Component</h1>
+}
+
 
 const Home = () => {
   //[ stateValue, mutateState ]
@@ -110,7 +118,9 @@ const Home = () => {
         myProp3={true}
         myProp4={ () => <div>My new JSX</div>}
         /> */}
-        <CompC myProp1={myValue} />
+        <CompC myProp1={myValue}
+              MyProp2={MyComponent}
+        />
       </>
     )
 }
