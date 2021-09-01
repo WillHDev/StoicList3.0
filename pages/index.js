@@ -23,9 +23,23 @@ function CompA() {
 
 
 class CompC extends React.Component {
-  render() {
+  state = {
+    myValue:10
+  };
+  //const [ myValue, setValue ] = useState(10);
+
+ 
+changeState(incrementor)
+ {
+   console.log(incrementor)
+ }  render() {
     return (
+      <>
       <h1>CompC</h1>
+      Current Value: { this.state.myValue }
+      <button onClick={ () => this.changeState( this.state.myValue + 1 ) }>+</button>
+      <button onClick={ () => this.changeState( this.state.myValue - 1 )}>-</button>
+      </>
     )
   }
 
@@ -33,8 +47,7 @@ class CompC extends React.Component {
 
 const Home = () => {
   //[ stateValue, mutateState ]
-  const [ myValue, setValue ] = useState(10);
- 
+
 
   // const changeValue = ( incrementor ) => {
   //   setValue( myValue + incrementor );
@@ -52,12 +65,9 @@ const Home = () => {
 
     return (
       <>
-      Current Value: { myValue }
-      <button onClick={ () => setValue( myValue + 1 ) }>+</button>
-      <button onClick={ () => setValue( myValue -1 )  }>-</button>
       <h1>Hello world</h1>
       <CompA />
-      
+      <CompC />
       </>
     )
 }
