@@ -11,6 +11,10 @@ const ArrowFunction = _ =>
 
 
 function CompA( props ) {
+
+  useEffect( () => {
+    console.log("COmpA useEffect");
+  }, [props.myProp1])
   return (
     <>
     <ArrowFunction />
@@ -83,9 +87,14 @@ const Home = () => {
   // const value = valueState[0];
   // const setValue = valueState[1];
   const [ myValue, setValue ] = useState(10);
+
+  //slightly different than state only when specified props 
+  //or state changed
+
+  //list of dependencies go in array
   useEffect( () => {
     console.log("useEffect called");
-  })
+  }, [myValue])
 
     return (
       <>
@@ -95,12 +104,13 @@ const Home = () => {
      Current Value: <h1>{ myValue }</h1>
       <button onClick={ () => setValue( myValue + 1 ) }>+</button>
       <button onClick={ () => setValue( myValue - 1 )}>-</button>
-     <CompA 
+     {/* <CompA 
         myProp1={ myValue }
         myProp2="My custome value"
         myProp3={true}
         myProp4={ () => <div>My new JSX</div>}
-        />
+        /> */}
+        <CompC myProp1={myValue} />
       </>
     )
 }
