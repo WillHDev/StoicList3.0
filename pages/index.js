@@ -10,11 +10,12 @@ const ArrowFunction = _ =>
 
 
 
-function CompA() {
+function CompA( props ) {
   return (
     <>
     <ArrowFunction />
     <p>Hello Component A</p>
+    <div>My Props: { props.myProp1 } </div>
     </>
   )
 }
@@ -88,7 +89,8 @@ const Home = () => {
      Current Value: <h1>{ myValue }</h1>
       <button onClick={ () => setValue( myValue + 1 ) }>+</button>
       <button onClick={ () => setValue( myValue - 1 )}>-</button>
-     
+     <CompA 
+        myProp1={ myValue }/>
       </>
     )
 }
