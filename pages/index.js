@@ -107,31 +107,9 @@ const Home = () => {
   }, [myValue])
 
     return (
-      <>
-      <h1>Hello world</h1>
-     
-      <h1>CompC</h1>
-     Current Value: <h1>{ myValue }</h1>
-      <button onClick={ () => setValue( myValue + 1 ) }>+</button>
-      <button onClick={ () => setValue( myValue - 1 )}>-</button>
-     {/* <CompA 
-        myProp1={ myValue }
-        myProp2="My custome value"
-        myProp3={true}
-        myProp4={ () => <div>My new JSX</div>}
-        /> */}
-        <CompC myProp1={myValue}
-              myProp2={
-                () => 
-                <CompA 
-                myProp1={ myValue }
-                myProp2="My custom value"
-                myProp3={true}
-               myProp4={ () => <div>My new JSX</div>}
-                />
-              }
-        />
-      </>
+     <>
+<h1>Home</h1>
+     </>
     )
 }
 
