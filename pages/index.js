@@ -26,13 +26,17 @@ class CompC extends React.Component {
   state = {
     myValue:10
   };
-  //const [ myValue, setValue ] = useState(10);
-
- 
-changeState(incrementor)
+  changeState(incrementor)
  {
    console.log(incrementor)
- }  render() {
+   this.setState({
+    myValue: incrementor
+  })  //const [ myValue, setValue ] = useState(10);
+
+ }
+
+ 
+  render() {
     return (
       <>
       <h1>CompC</h1>
