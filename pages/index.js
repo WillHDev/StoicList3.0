@@ -23,9 +23,20 @@ function CompA() {
 
 
 class CompC extends React.Component {
-  state = {
-    myValue:10
-  };
+
+
+  constructor() {
+    super();
+    this.state = {
+        myValue: 10
+      }
+  }
+
+
+  // state = {
+  //   myValue:10
+  // };
+
   changeState(incrementor)
  {
    console.log(incrementor)
@@ -37,12 +48,13 @@ class CompC extends React.Component {
 
  
   render() {
+    const { myValue }  = this.state;
     return (
       <>
       <h1>CompC</h1>
       Current Value: { this.state.myValue }
-      <button onClick={ () => this.changeState( this.state.myValue + 1 ) }>+</button>
-      <button onClick={ () => this.changeState( this.state.myValue - 1 )}>-</button>
+      <button onClick={ () => this.changeState( myValue + 1 ) }>+</button>
+      <button onClick={ () => this.changeState( myValue - 1 )}>-</button>
       </>
     )
   }
