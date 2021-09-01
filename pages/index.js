@@ -16,6 +16,9 @@ function CompA( props ) {
     <ArrowFunction />
     <p>Hello Component A</p>
     <div>My Props: { props.myProp1 } </div>
+    <div>My Props2: { props.myProp2 } </div>
+    <div>My Props3: { props.myProp3.toString() } </div>
+    <div>My Props4: { <props.myProp4/> } </div>
     </>
   )
 }
@@ -90,7 +93,11 @@ const Home = () => {
       <button onClick={ () => setValue( myValue + 1 ) }>+</button>
       <button onClick={ () => setValue( myValue - 1 )}>-</button>
      <CompA 
-        myProp1={ myValue }/>
+        myProp1={ myValue }
+        myProp2="My custome value"
+        myProp3={true}
+        myProp4={ () => <div>My new JSX</div>}
+        />
       </>
     )
 }
