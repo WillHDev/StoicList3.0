@@ -13,7 +13,7 @@ const ArrowFunction = _ =>
 function CompA( props ) {
 
   useEffect( () => {
-    console.log("COmpA useEffect");
+    //console.log("COmpA useEffect");
   }, [props.myProp1])
   return (
     <>
@@ -47,7 +47,7 @@ class CompC extends React.Component {
 
   changeState(incrementor)
  {
-   console.log(incrementor)
+   //console.log(incrementor)
    this.setState({
     myValue: incrementor
   })  //const [ myValue, setValue ] = useState(10);
@@ -57,7 +57,7 @@ class CompC extends React.Component {
  
   render() {
     const { myValue }  = this.state;
-    const { myProp1, MyProp2 } = this.props;
+    const { myProp1, myProp2: MyNewComponent } = this.props;
     return (
       <>
       <h1>CompC</h1>
@@ -65,7 +65,12 @@ class CompC extends React.Component {
       <button onClick={ () => this.changeState( myValue + 1 ) }>+</button>
       <button onClick={ () => this.changeState( myValue - 1 )}>-</button>
       <h2>{ myProp1 }</h2>
-      <MyProp2 />
+      <MyNewComponent
+      myProp1={ myValue }
+        myProp2="My custome value"
+        myProp3={true}
+        myProp4={ () => <div>My new JSX</div>}
+      />
       </>
     )
   }
@@ -119,7 +124,7 @@ const Home = () => {
         myProp4={ () => <div>My new JSX</div>}
         /> */}
         <CompC myProp1={myValue}
-              MyProp2={MyComponent}
+              myProp2={CompA}
         />
       </>
     )
