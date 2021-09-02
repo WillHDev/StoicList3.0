@@ -3,6 +3,22 @@ import Image from 'next/image'
 import React, { useDebugValue, useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
+
+// function HeadWithBulma() {
+//   return (
+//     <div>
+//       <Head>
+//         <title>My page title</title>
+//         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        
+//       </Head>
+//       <p>Hello world!</p>
+//     </div>
+//   )
+// }
+
+
 const ArrowFunction = _ => 
     <div>
       <h1>I'm an arrow function</h1>
@@ -103,50 +119,22 @@ const Home = () => {
 
   //list of dependencies go in array
 
-  useEffect(() => {
-    // const script = document.createElement('script');
+  // useEffect(() => {
+  //   // const script = document.createElement('script');
   
-    // script.src = "https://use.typekit.net/foobar.js";
-    // script.async = true;
+  //   // script.src = "https://use.typekit.net/foobar.js";
+  //   // script.async = true;
   
-    // document.body.appendChild(script);
+  //   // document.body.appendChild(script);
   
-    // return () => {
-    //   document.body.removeChild(script);
+  //   // return () => {
+  //   //   document.body.removeChild(script);
 
 
-    // }
+  //   // }
 
-    <script>
-      { 
-document.addEventListener('DOMContentLoaded', () => {
 
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
-
-    // Add a click event on each of them
-    $navbarBurgers.forEach(el => {
-      el.addEventListener('click', () => {
-
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-      });
-    });
-  }
-
-})
-}
-  </script>
-  }, []);
+  // }, []);
 
 
 
