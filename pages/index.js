@@ -8,10 +8,10 @@ import ResourceList from 'components/ResourceList'
 import NewsLetter from 'components/NewsLetter'
 import Footer from 'components/Footer'
 
-import { resources } from 'api/data';
+//import { resources } from 'api/data';
 
 
-const Home = () => {
+const Home = ({ resources }) => {
 
 
     return (
@@ -30,6 +30,17 @@ const Home = () => {
     )
 }
 
+export async function getStaticProps() {
+  //write async in front of the function where you would
+  //like to resolve this data
+
+  const resData = await fetch("http://localhost:3000/api/resources");
+  const data = await resData.json();
+     return {  props: {
+       resources: data
+     }
+    }
+}
 
 export default Home;
 
