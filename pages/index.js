@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useDebugValue, useState, useEffect } from 'react'
 //import styles from 'styles/Home.module.css'
-import NavBar from 'components/NavBar'
+import Layout from 'components/Layout'
 import ResourceHighlight from 'components/ResourceHighlight'
 import ResourceList from 'components/ResourceList'
 import NewsLetter from 'components/NewsLetter'
@@ -12,11 +12,12 @@ const Home = () => {
 
     return (
      <>
-        <NavBar />
+        <Layout>
         <ResourceHighlight />  
         <ResourceList />
         <NewsLetter />
         <Footer />
+        </Layout>
      </>
     )
 }
