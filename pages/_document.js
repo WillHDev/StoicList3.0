@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 
-const bulmaScript = () => {
+const BulmaScript = () => {
     return( 
     <script>
 {document.addEventListener('DOMContentLoaded', () => {
@@ -52,7 +52,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <bulmaScript />
         </body>
       </Html>
     )
