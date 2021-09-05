@@ -1,4 +1,4 @@
-const resources = [
+export const resources = [
     {
         id: "1",
         title: "Learning Singleton Pattern",
@@ -6,7 +6,8 @@ const resources = [
         link: "https://link.com",
         image: "https://image.com",
         proiority: 3,
-        timeToFinish: 120
+        timeToFinish: 120,
+        active: true
     },
     {
         id: "2",
@@ -15,7 +16,8 @@ const resources = [
         link: "https://link.com",
         image: "https://image.com",
         proiority: 2,
-        timeToFinish: 60
+        timeToFinish: 60,
+        active: false
     },
     {
         id: "3",
@@ -24,6 +26,7 @@ const resources = [
         link: "https://link.com",
         image: "https://image.com",
         proiority: 1,
-        timeToFinish: 30
+        timeToFinish: 30,
+        active: false
     }
 ];

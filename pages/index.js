@@ -8,14 +8,22 @@ import ResourceList from 'components/ResourceList'
 import NewsLetter from 'components/NewsLetter'
 import Footer from 'components/Footer'
 
+import { resources } from './api/data';
+
+
 const Home = () => {
+
 
     return (
      <>
         <Layout>
-        <ResourceHighlight />  
-        <ResourceList />
+        <ResourceHighlight
+          resources={resources}
+        />  
         <NewsLetter />
+        <ResourceList 
+          resources={resources}
+        />
         <Footer />
         </Layout>
      </>
