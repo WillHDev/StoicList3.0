@@ -30,7 +30,13 @@ const Home = ({ resources }) => {
     )
 }
 
-export async function getStaticProps() {
+//is called every time you will visit the page
+//fn is executed on the server
+//data are always fresh
+//good for whSen data is updated frequently
+//blog etc where data doesn't change often
+//good to use static props to optimize seo
+export async function getServerSideProps() {
   //write async in front of the function where you would
   //like to resolve this data
 
