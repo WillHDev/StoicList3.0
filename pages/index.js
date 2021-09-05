@@ -18,11 +18,11 @@ const Home = () => {
      <>
         <Layout>
         <ResourceHighlight
-          resources={resources}
+          resources={resources.slice(0,2)}
         />  
         <NewsLetter />
         <ResourceList 
-          resources={resources}
+          resources={resources.slice(2)}
         />
         <Footer />
         </Layout>
