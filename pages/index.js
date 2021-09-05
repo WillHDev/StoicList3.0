@@ -8,7 +8,7 @@ import ResourceList from 'components/ResourceList'
 import NewsLetter from 'components/NewsLetter'
 import Footer from 'components/Footer'
 
-import { resources } from './api/data';
+import { resources } from 'api/data';
 
 
 const Home = () => {
