@@ -18,7 +18,6 @@ const Home = ({ resources }) => {
 //   useEffect( () =>  {
 //     fetch:("http://localhost:3001/api/resources");
 //  }, [])
-console.log(resources);
 
     return (
      <>
