@@ -40,7 +40,9 @@ export async function getServerSideProps() {
   //write async in front of the function where you would
   //like to resolve this data
 
-  const resData = await fetch("http://localhost:3000/api/resources");
+  const resData = await fetch("http://localhost:3001/api/resources");
+  console.log(resData);
+  
   const data = await resData.json();
      return {  props: {
        resources: data
