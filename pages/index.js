@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useDebugValue, useState, useEffect } from 'react'
+//import React, { useDebugValue, useState, useEffect } from 'react'
 //import styles from 'styles/Home.module.css'
 import Layout from 'components/Layout'
 import ResourceHighlight from 'components/ResourceHighlight'
@@ -9,10 +9,16 @@ import NewsLetter from 'components/NewsLetter'
 import Footer from 'components/Footer'
 
 //import { resources } from 'api/data';
-
+//CORS - you can make a request from the server to another domain
+//but not on the client side, not with code shipped to the browser
+//because its insecure and forbidden
 
 const Home = ({ resources }) => {
 
+//   useEffect( () =>  {
+//     fetch:("http://localhost:3001/api/resources");
+//  }, [])
+console.log(resources);
 
     return (
      <>
@@ -41,9 +47,10 @@ export async function getServerSideProps() {
   //like to resolve this data
 
   const resData = await fetch("http://localhost:3001/api/resources");
-  console.log(resData);
   
   const data = await resData.json();
+  //only appears in terminal
+ 
      return {  props: {
        resources: data
      }
