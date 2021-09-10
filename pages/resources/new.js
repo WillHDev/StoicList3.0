@@ -18,13 +18,18 @@ const ResourceCreate = () => {
         alert(JSON.stringify(form));
     }
 
-    const handleTitleChange = (e) => {
+    const handleChange = (e) => {
         //console.log("Input is called/changing");
         //console.log(e.target.value);
+        //console.log("called on:" + e.target.name );
+        const { name, value } = e.target;
+        
         setForm({ 
             ...form,
-            title: e.target.value
+            [name]: value
          });
+
+         console.log(form);
     }
     //console.log(form);
     
@@ -41,7 +46,8 @@ const ResourceCreate = () => {
                                             <div className="control">
                                                 <input 
                                                 value={form.title}
-                                                onChange={handleTitleChange}
+                                                onChange={handleChange}
+                                                name="title"
                                                 className="input" 
                                                 type="text" 
                                                 placeholder="Learn Next JS and Sanity IO" />
@@ -51,7 +57,9 @@ const ResourceCreate = () => {
                                             <label className="label">Description</label>
                                             <div className="control">
                                                 <textarea 
-                                                //value={form.description}
+                                                value={form.description}
+                                                onChange={handleChange}
+                                                name="description"
                                                 className="textarea" 
                                                 placeholder="Learn these technologies because they are very popular and enable better SEO">
                                                 </textarea>
@@ -61,7 +69,9 @@ const ResourceCreate = () => {
                                             <label className="label">Link</label>
                                             <div className="control">
                                                 <input 
-                                                //value={form.link}
+                                                value={form.link}
+                                                onChange={handleChange}
+                                                name="link"
                                                 className="input" 
                                                 type="text" 
                                                 placeholder="https://academylink.com" />
@@ -71,7 +81,10 @@ const ResourceCreate = () => {
                                         <label className="label">Priority</label>
                                         <div className="control">
                                             <div className="select">
-                                            <select //value={form.priority}
+                                            <select 
+                                            value={form.priority}
+                                            onChange={handleChange}
+                                            name="priority"
                                             >
                                                 <option>1</option>
                                                 <option>2</option>
@@ -86,7 +99,9 @@ const ResourceCreate = () => {
                                             <label className="label">Time to Finish</label>
                                             <div className="control">
                                                 <input
-                                                //value={form.timeToFinish}
+                                                value={form.timeToFinish}
+                                                onChange={handleChange}
+                                                name="timeToFinish"
                                                  className="input" 
                                                  type="number" 
                                                  placeholder="60 (Time is in minutes)" />
