@@ -1,7 +1,23 @@
 //fn component in most cases
 //TODO look up when to use class component
 import Layout from 'components/Layout';
+import { useState } from 'react'
+
+const DEFAULT_DATA = {
+    title: "Some Title",
+    description: "",
+    link: "",
+    priority:"2",
+    timeToFinish: 60
+}
+
 const ResourceCreate = () => {
+    const [ form, setForm ] = useState(DEFAULT_DATA);
+    const submitForm = () => {
+        console.log(JSON.stringify(form));
+        alert(JSON.stringify(form));
+    }
+    
     return (
             <Layout>
                 <div className="container">
@@ -14,6 +30,7 @@ const ResourceCreate = () => {
                                             <label className="label">Title</label>
                                             <div className="control">
                                                 <input 
+                                                value={form.title}
                                                 className="input" 
                                                 type="text" 
                                                 placeholder="Learn Next JS and Sanity IO" />
@@ -23,6 +40,7 @@ const ResourceCreate = () => {
                                             <label className="label">Description</label>
                                             <div className="control">
                                                 <textarea 
+                                                value={form.description}
                                                 className="textarea" 
                                                 placeholder="Learn these technologies because they are very popular and enable better SEO">
                                                 </textarea>
@@ -32,6 +50,7 @@ const ResourceCreate = () => {
                                             <label className="label">Link</label>
                                             <div className="control">
                                                 <input 
+                                                value={form.link}
                                                 className="input" 
                                                 type="text" 
                                                 placeholder="https://academylink.com" />
@@ -41,7 +60,7 @@ const ResourceCreate = () => {
                                         <label className="label">Priority</label>
                                         <div className="control">
                                             <div className="select">
-                                            <select>
+                                            <select value={form.priority}>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -55,17 +74,22 @@ const ResourceCreate = () => {
                                             <label className="label">Time to Finish</label>
                                             <div className="control">
                                                 <input
+                                                value={form.timeToFinish}
                                                  className="input" 
                                                  type="number" 
                                                  placeholder="60 (Time is in minutes)" />
                                         </div>
+                                        <p className="help">Time in minutes</p>
                                     </div>
                                     <div className="field is-grouped">
                                         <div className="control">
                                             <button className="button is-link">Submit</button>
                                         </div>
                                         <div className="control">
-                                            <button className="button is-link is-light">Cancel</button>
+                                            <button 
+                                            type="button"
+                                            onClick={submitForm}
+                                            className="button is-link is-light">Cancel</button>
                                         </div>
                                         </div>
                                 </form>
