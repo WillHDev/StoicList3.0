@@ -13,10 +13,27 @@ const DEFAULT_DATA = {
 
 const ResourceCreate = () => {
     const [ form, setForm ] = useState(DEFAULT_DATA);
+
+    // const submitForm = () => {
+    //     //request POST , vs absolute path
+    //     fetch("/api/resources"), {
+                                //^
+    //         body: JSON.stringify(form),
+    //         headers: {"Content-Type": "application/json"},
+    //         method: "POST"
+        
+    //     }
+    // }
+
     const submitForm = () => {
-        console.log(JSON.stringify(form));
-        alert(JSON.stringify(form));
-    }
+        fetch("/api/resources", {
+          body: JSON.stringify(form),
+          headers: {"Content-Type": "application/json"},
+          method: "POST"
+        })
+      }
+
+    const resetForm = () => setForm(DEFAULT_DATA);
 
     const handleChange = (e) => {
         //console.log("Input is called/changing");
@@ -29,7 +46,7 @@ const ResourceCreate = () => {
             [name]: value
          });
 
-         console.log(form);
+        // console.log(form);
     }
     //console.log(form);
     
@@ -110,12 +127,15 @@ const ResourceCreate = () => {
                                     </div>
                                     <div className="field is-grouped">
                                         <div className="control">
-                                            <button className="button is-link">Submit</button>
+                                            <button 
+                                            type="button"
+                                            onClick={submitForm}
+                                            className="button is-link">Submit</button>
                                         </div>
                                         <div className="control">
                                             <button 
                                             type="button"
-                                            onClick={submitForm}
+                                            onClick={resetForm}
                                             className="button is-link is-light">Cancel</button>
                                         </div>
                                         </div>
