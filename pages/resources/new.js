@@ -1,7 +1,8 @@
 //fn component in most cases
 //TODO look up when to use class component
 import Layout from 'components/Layout';
-import { useState } from 'react'
+import axios from "axios";
+import { useState } from 'react';
 
 const DEFAULT_DATA = {
     title: "Some Title",
@@ -26,11 +27,13 @@ const ResourceCreate = () => {
     // }
 
     const submitForm = () => {
-        fetch("/api/resources", {
-          body: JSON.stringify(form),
-          headers: {"Content-Type": "application/json"},
-          method: "POST"
-        })
+
+        axios.post("/api/resources", form)
+        // fetch("/api/resources", {
+        //   body: JSON.stringify(form),
+        //   headers: {"Content-Type": "application/json"},
+        //   method: "POST"
+        // })
       }
 
     const resetForm = () => setForm(DEFAULT_DATA);
